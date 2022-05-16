@@ -7,6 +7,10 @@ const PORT = 8000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', async (req, res) => {
+    res.send({message:"app started successfully!"})
+})
+
 app.post("/compile", async (req, res) => {
     //getting the required data from the request
     let code = req.body.code;
